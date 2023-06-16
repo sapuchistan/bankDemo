@@ -7,7 +7,6 @@ import {
   import { getMovements } from "../contacts";
 
   export async function loader( {param }) {
-    console.log(param);
     const contact = await getMovements(param);
     return { contact };
   }
@@ -35,7 +34,11 @@ import {
   return (
   
     <>
+    <div>
+      <h1>All customer movements</h1>
+      </div>
    <Form method="post" id="contact-form"> 
+   <h5>Select page:</h5>
    <select  onChange={(e) => setName(e.target.value)}>
    { Array.apply(0, Array(contact.totalPages)).map((key, index) =>
   <option key={index} value={index}> 
@@ -45,9 +48,15 @@ import {
   
 
 )}
+
  </select>
- <table >
-<thead>
+ <table style={{         
+          backgroundColor: 'skyblue',
+        }} >
+<thead style={{        
+          backgroundColor: 'black',
+          color: 'white'
+        }}>
   <tr>
     <td >Date </td>
     <td >Debit </td>

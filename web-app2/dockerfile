@@ -1,0 +1,10 @@
+FROM node:18-alpine
+COPY / ./
+RUN npm install && npm cache clean --force
+RUN npm run build
+RUN npm install -g serve
+EXPOSE 8095
+ENV HOST=0.0.0.0
+ENV PORT=8095
+CMD ["npm", "run", "serve"]
+  						

@@ -14,7 +14,6 @@ import com.example.demo.core.movement.Movement;
 import com.example.demo.core.movement.MovementRepo;
 import com.example.demo.core.movement.MovementType;
 import com.example.demo.error.AccountBalanceException;
-import com.example.demo.util.MessageUtil;
 
 @Service
 public class AtmService
@@ -24,13 +23,10 @@ public class AtmService
 
   private final AccountRepo accountRepo;
 
-  private final MessageUtil messageUtil;
-
   private ZoneId zid = ZoneId.of("US/Eastern");
 
-  AtmService(MovementRepo movementRepo, MessageUtil messageUtil, AccountRepo accountRepo) {
+  AtmService(MovementRepo movementRepo, AccountRepo accountRepo) {
     this.movementRepo = movementRepo;
-    this.messageUtil = messageUtil;
     this.accountRepo = accountRepo;
   }
 
@@ -88,19 +84,18 @@ public class AtmService
 
   @Override
   public BigDecimal transfer(Account origin, Account destiny, BigDecimal debit) {
-    BigDecimal tmpBalance = origin.getBalance();
+
     if (origin.getAccountNumber().equals(destiny.getAccountNumber())) {
       throw new ResponseStatusException(HttpStatus.NOT_MODIFIED);
     }
     try {
+      BigDecimal tmpBalance = origin.getBalance();
       tmpBalance = withDraw(origin, debit, true);
       deposit(destiny, debit, true);
+      return tmpBalance;
     }
     catch (AccountBalanceException ex) {
       throw new ResponseStatusException(HttpStatus.NOT_MODIFIED);
     }
-
-    return tmpBalance;
   }
-
 }

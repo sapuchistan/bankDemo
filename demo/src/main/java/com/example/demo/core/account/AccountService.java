@@ -2,7 +2,7 @@ package com.example.demo.core.account;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.core.account.converter.AccountToAccountDTOConverter;
+import com.example.demo.core.account.converter.AccountToAccountDTO;
 import com.example.demo.core.account.web.AccountDTO;
 import com.example.demo.error.EntityNotFoundException;
 import com.example.demo.util.MessageUtil;
@@ -14,12 +14,12 @@ public class AccountService
 
   private final MessageUtil messageUtil;
 
-  private final AccountToAccountDTOConverter accountToAccountDTOConverter;
+  private final AccountToAccountDTO accountToAccountDTOConverter;
 
   AccountService(
       AccountRepo accountRepo,
       MessageUtil messageUtil,
-      AccountToAccountDTOConverter accountToAccountDTOConverter)
+      AccountToAccountDTO accountToAccountDTOConverter)
   {
     this.accountRepo = accountRepo;
     this.messageUtil = messageUtil;

@@ -7,7 +7,7 @@ import com.example.demo.core.account.Account;
 import com.example.demo.core.account.web.AccountDTO;
 
 @Component
-public class AccountToAccountDTOConverter
+public class AccountToAccountDTO
     implements Converter<Account, AccountDTO>
 {
 

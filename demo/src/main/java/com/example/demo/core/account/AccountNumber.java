@@ -16,6 +16,13 @@ public class AccountNumber
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long accountNumberId;
 
+  public AccountNumber() {
+  }
+
+  public AccountNumber(Long accountNumberId) {
+    this.accountNumberId = accountNumberId;
+  }
+
   public Long getAccountNumberId() {
     return accountNumberId;
   }

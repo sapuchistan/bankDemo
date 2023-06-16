@@ -31,9 +31,15 @@ export async function loader({ params }) {
       }, [name,contact]);
   return (
     <>
-    <div id="contact">
-      <div>
-      <h3>Balance:</h3>
+    <div id="contact" style={{height: '20%'}}>
+      <div style={{
+          width: '30%',
+          height: '100%',
+          backgroundColor: 'powderblue',
+          paddingLeft: '5%',
+          paddingTop: '5%',
+        }}>
+      <h2>Balance:</h2>
       <h1>
           {contact.balance    ? (
             <>
@@ -45,7 +51,14 @@ export async function loader({ params }) {
         </h1>
       </div>
 
-      <div>
+      <div style={{
+          width: '70%',
+          height: '100%',
+          backgroundColor: 'skyblue',
+          paddingLeft: '20%',
+          paddingTop: '5%',
+          
+        }}>
       <div>
       <h1>Account number:</h1>
       </div>
@@ -58,7 +71,7 @@ export async function loader({ params }) {
             <i>No Name</i>
           )}{" "}          
         </h1>
-        <div>
+        <div >
           <Form action="deposit">
             <button type="submit">deposit</button>
           </Form>
@@ -72,7 +85,12 @@ export async function loader({ params }) {
         </div>
       </div>
     </div>
+    
+    <div>
+      <h1>Transaction history</h1>
+      </div>
      <Form method="post" id="contact-form"> 
+     <h5>Select page:</h5>
      <select  onChange={(e) => setName(e.target.value)}>
      { Array.apply(0, Array(contactTable.totalPages)).map((key, index) =>
     <option key={index} value={index}> 
@@ -83,8 +101,13 @@ export async function loader({ params }) {
   
   )}
    </select>
-   <table >
-  <thead>
+   <table  style={{         
+          backgroundColor: 'skyblue',
+        }}>
+  <thead style={{        
+          backgroundColor: 'black',
+          color: 'white'
+        }}>
     <tr>
       <td >Date </td>
       <td >Debit </td>

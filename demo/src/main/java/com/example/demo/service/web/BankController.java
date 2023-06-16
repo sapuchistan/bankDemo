@@ -69,8 +69,8 @@ public class BankController
     return bankService.withdrawFunds(withdrawRequest);
   }
 
-  @ResponseStatus(HttpStatus.OK)
   @PutMapping("/transactional/transfer")
+  @ResponseStatus(HttpStatus.OK)
   public BigDecimal transferFunds(@RequestBody @Valid TransferRequest transferRequest) {
     return bankService.transferFunds(transferRequest);
   }
@@ -78,7 +78,7 @@ public class BankController
   @GetMapping("/movements")
   @ResponseBody
   public Page<MovementDTO> getAllMovements(
-      @PageableDefault(sort = "timeStamp", direction = Sort.Direction.ASC) Pageable pageable)
+      @PageableDefault(sort = "timeStamp", direction = Sort.Direction.DESC) Pageable pageable)
   {
     return bankService.findAllMovements(pageable);
   }
@@ -87,7 +87,7 @@ public class BankController
   @ResponseBody
   public Page<MovementDTO> getAllMovements(
       @PathVariable Long accountId,
-      @PageableDefault(sort = "timeStamp", direction = Sort.Direction.ASC) Pageable pageable)
+      @PageableDefault(sort = "timeStamp", direction = Sort.Direction.DESC) Pageable pageable)
   {
     return bankService.findAllMovementsByAccount(accountId, pageable);
   }

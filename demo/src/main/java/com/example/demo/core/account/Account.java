@@ -48,6 +48,43 @@ public class Account
 
   private BigDecimal balance;
 
+  public Account() {
+  }
+
+  public Account(
+      Customer customer,
+      Long accountCountryNumber,
+      Long accountCityNumber,
+      Long accountOfficeNumber,
+      AccountNumber accountNumber,
+      BigDecimal balance)
+  {
+    this.customer = customer;
+    this.accountCountryNumber = accountCountryNumber;
+    this.accountCityNumber = accountCityNumber;
+    this.accountOfficeNumber = accountOfficeNumber;
+    this.accountNumber = accountNumber;
+    this.balance = balance;
+  }
+
+  public Account(
+      Long accountId,
+      Customer customer,
+      Long accountCountryNumber,
+      Long accountCityNumber,
+      Long accountOfficeNumber,
+      AccountNumber accountNumber,
+      BigDecimal balance)
+  {
+    this.accountId = accountId;
+    this.customer = customer;
+    this.accountCountryNumber = accountCountryNumber;
+    this.accountCityNumber = accountCityNumber;
+    this.accountOfficeNumber = accountOfficeNumber;
+    this.accountNumber = accountNumber;
+    this.balance = balance;
+  }
+
   public Long getAccountId() {
     return accountId;
   }

@@ -20,8 +20,8 @@ import {
   
   return (
     <Form method="post" id="contact-form">
-      <p>
-        <span> <h3>Transfer Amount </h3></span>
+<div>
+        <h3>Transfer Amount </h3>
         <input
           placeholder="$ 0.00"
           aria-label="amount"
@@ -29,11 +29,10 @@ import {
           name="Debit"
           defaultValue={"0.00"}
         />
-        
-      </p>
-      <p>
-        <span> <h3>Recipient account Number </h3> </span>
-        <span><h3> 57 1 101 </h3> </span>
+        </div>
+        <div>
+
+         <h3>Recipient account Number 57 1 101 </h3> 
         <input
           placeholder="0"
           aria-label="amount"
@@ -42,10 +41,7 @@ import {
           defaultValue={"0"}
         />
         
-      </p>
-      
-      
-      
+        </div>
       <p>
         <button type="submit">Save</button>
         <button

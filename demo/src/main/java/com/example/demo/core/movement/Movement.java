@@ -44,6 +44,27 @@ public class Movement
   @Column(columnDefinition = "smallint")
   private MovementType movementType;
 
+  public Movement() {
+  }
+
+  public Movement(
+      Long movementId,
+      LocalDateTime timeStamp,
+      BigDecimal debit,
+      BigDecimal credit,
+      BigDecimal balance,
+      Account account,
+      MovementType movementType)
+  {
+    this.movementId = movementId;
+    this.timeStamp = timeStamp;
+    this.debit = debit;
+    this.credit = credit;
+    this.balance = balance;
+    this.account = account;
+    this.movementType = movementType;
+  }
+
   public Long getMovementId() {
     return movementId;
   }

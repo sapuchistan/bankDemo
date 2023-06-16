@@ -87,25 +87,21 @@ export async function getContact(id) {
   }
 
   export async function DepositEvent(data, params) {   
-    //console.log(data,params);
     let contacts = await atmDeposit(data, params);
     return contacts;
   }
 
   export async function WithdrawEvent(data, params) {   
-    //console.log(data,params);
     let contacts = await atmWithdraw(data, params);
     return contacts;
   }
 
   export async function TransferEvent(data, params) {   
-    //console.log(data,params);
     let contacts = await atmTransfer(data, params);
     return contacts;
   }
 
   export async function getMovements(page) {   
-    //console.log(data,params);
     if(!page){
         page=0;
     }
@@ -114,7 +110,6 @@ export async function getContact(id) {
   }
 
   export async function getMovementsPerCustomer(customer,page) {   
-    console.log(customer,page);
     if(!page){
         page=0;
     }

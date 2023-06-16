@@ -18,7 +18,24 @@ public class Customer
   private String firstName;
 
   @Column
-  private String LastName;
+  private String lastName;
+
+  public Customer() {
+
+  }
+
+  public Customer(String firstName, String lastName) {
+    super();
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  public Customer(Long customerId, String firstName, String lastName) {
+    super();
+    this.customerId = customerId;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
   public Long getCustomerId() {
     return customerId;
@@ -37,11 +54,11 @@ public class Customer
   }
 
   public String getLastName() {
-    return LastName;
+    return lastName;
   }
 
   public void setLastName(String lastName) {
-    LastName = lastName;
+    this.lastName = lastName;
   }
 
 }

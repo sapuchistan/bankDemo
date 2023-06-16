@@ -1,13 +1,8 @@
 export default function Index() {
     return (
       <p id="zero-state">
-        This is a demo for React Router.
+        <h1>This is a demo for WB bank</h1>
         <br />
-        Check out{" "}
-        <a href="https://reactrouter.com">
-          the docs at reactrouter.com
-        </a>
-        .
       </p>
     );
   }

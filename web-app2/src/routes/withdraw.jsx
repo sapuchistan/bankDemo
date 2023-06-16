@@ -20,8 +20,9 @@ import {
   
   return (
     <Form method="post" id="contact-form">
-      <p>
+     
         <span> <h5>Withdraw Amount:</h5></span>
+        <div>
         <input
           placeholder="$ 0.00"
           aria-label="amount"
@@ -30,11 +31,11 @@ import {
           defaultValue={"0.00"}
         />
         
-      </p>
+        </div>
       
       
       
-      <p>
+        <div>
         <button type="submit">Save</button>
         <button
           type="button"
@@ -44,7 +45,7 @@ import {
         >
           Cancel
         </button>
-      </p>
+        </div>
     </Form>
   );
 }

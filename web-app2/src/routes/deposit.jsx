@@ -18,9 +18,12 @@ import {
     const navigate = useNavigate();
   
   return (
+
+   
     <Form method="post" id="contact-form">
-      <p>
-        <span> <h5>Deposit Amount:</h5></span>
+    
+        <h5>Deposit Amount:</h5>
+        <div> 
         <input
           placeholder="$ 0.00"
           aria-label="amount"
@@ -28,12 +31,12 @@ import {
           name="Credit"
           defaultValue={"0.00"}
         />
-        
-      </p>
+      
+      </div>
       
       
-      
-      <p>
+       
+      <div> 
         <button type="submit">Save</button>
         <button
           type="button"
@@ -43,7 +46,8 @@ import {
         >
           Cancel
         </button>
-      </p>
+       </div>
     </Form>
+     
   );
 }

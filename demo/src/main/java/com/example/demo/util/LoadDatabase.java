@@ -78,7 +78,7 @@ public class LoadDatabase
       log.info("Preloading elmer" + accountRepo.save(accountElmer));
 
       log.info("Preloading wile" + customerRepo.save(wile));
-      log.info("Preloading elmer" + accountRepo.save(accountWile));
+      log.info("Preloading wile" + accountRepo.save(accountWile));
     };
   }
 }
